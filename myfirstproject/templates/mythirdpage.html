@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+
+{% block title %}My second page{% endblock title %}
+{%block content%}
+this is my third {{var}} page
+<h1>{{msg}}</h1>
+<ul>
+    {% for eachfruit in myfruits %}
+    <li>{{eachfruit}}</li>
+    {% endfor %}
+</ul>
+
+{% if ans %}
+<h1>{{num2}} is less than {{num1}}</h1>
+{% else %}
+<h1>{{num1}} is less than {{num2}}</h1>
+{% endif %}
+{%endblock%}

@@ -1,0 +1,47 @@
+{% extends 'index.html' %} {% block title %}My form page{% endblock title %}
+{%block content%}
+
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6" style="margin: 100px auto">
+      <form method = "POST" action = "{% url 'submitmyform' %}">  {% comment %} the url name must be the name where you want to store the data  {% endcomment %}
+        {% csrf_token %}
+        <h1>My form</h1>
+        <div class="form-group">
+          <label for="mytext">MyText</label>
+          <input
+            type="text"
+            name="mytext"
+            class="form-control"
+            id="mytext"
+            placeholder="Enter text"
+          />
+        </div>
+        <div class="form-group">
+          <label for="mytextarea">My textarea</label>
+          <textarea
+            class="form-control"
+            id="mytextarea"
+            name="mytextarea"
+            rows="3"
+          ></textarea>
+        </div>
+
+        {% comment %}
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+          <label class="form-check-label" for="exampleCheck1"
+            >Check me out</label
+          >
+        </div>
+        {% endcomment %}
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{%endblock%}
