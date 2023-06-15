@@ -58,7 +58,14 @@
                 <img src="{% static 'voteimage.jpeg' %}" class="img-fluid" alt="...">
                 <div class="card">
                     <div class="card-body">
-                        <form method = "GET" action="{% url 'submitquery' %}">
+                        <form method = "GET" action="{% url 'getquery' %}">
+                            <datalist id="languages">
+                                <option value="Python">
+                                <option value="PHP">
+                                <option value="Java">
+                                <option value="C">
+
+                            </datalist>
                             <div class="form-group">
                                 <input type="search" class="form-control" name="query" id="query">
                             </div>
@@ -72,7 +79,7 @@
     </div>
         <div class="row">
             <div class="col-md-6" style="margin:2rem auto 0 auto;">
-                <div class="display-4" id="about" name= "about" style="text-align:center;">
+                <div class="badge badge-success" id="about" name= "about" style="text-align:center; display:block;font-size:2rem;">
                     About
                 </div>
                 <hr>
@@ -83,21 +90,13 @@
         </div>
 
       <div class="row">
-        <div class="col-md-6" style="margin:2rem auto 0 auto;">
+         <div class="col-md-6" style="margin:2rem auto 0 auto;">
+                <div class="badge badge-danger" id="about" name= "about" style="text-align:center; display:block;font-size:2rem;">
+                    Instructions
+                </div>
             <div class="display-4" id="instructions" name= "instructions" style="text-align:center;">
                 Select your language and see results.
             </div>
-            <hr>
-            <ul class="list-group">
-                <li class="list-group-item">+ Addition</li>
-                <li class="list-group-item">- Subtraction</li>
-                <li class="list-group-item">* Multiplication</li>
-                <li class="list-group-item">/ Division</li>
-                <li class="list-group-item">// Floor Division</li>
-                <li class="list-group-item">() Parantheses</li>
-                <li class="list-group-item">** Exponential</li>
-                <li class="list-group-item">% Mod</li>
-              </ul>
         </div>
     </div>
 
